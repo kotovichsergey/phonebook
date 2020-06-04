@@ -1,0 +1,21 @@
+{
+    "name": "vitamin/phonebook",
+    "description": "phonebook",
+    "authors": [
+        {
+            "name": "Kotovich Sergey",
+            "email": "vitaminov16@mail.ru"
+        }
+    ],
+    "require": {
+        "slim/slim": "3.*",
+        "illuminate/database": "^5.4",
+        "respect/validation": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    }
+
+}
