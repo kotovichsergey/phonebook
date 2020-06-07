@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2020-06-03 23:03:44
+Date: 2020-06-08 00:16:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,7 +26,7 @@ CREATE TABLE `phones` (
   PRIMARY KEY (`id`),
   KEY `phones_ibfk_1` (`user_id`),
   CONSTRAINT `phones_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for users
@@ -41,4 +41,19 @@ CREATE TABLE `users` (
   `surname` varchar(64) NOT NULL DEFAULT 'Doe',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for weather
+-- ----------------------------
+DROP TABLE IF EXISTS `weather`;
+CREATE TABLE `weather` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `city_name` varchar(32) NOT NULL,
+  `temperature` decimal(5,2) NOT NULL,
+  `wind_speed` decimal(5,2) NOT NULL,
+  `weather_description` varchar(32) NOT NULL,
+  `weather_icon` varchar(32) NOT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;

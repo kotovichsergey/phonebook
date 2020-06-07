@@ -16,3 +16,5 @@ $app->get('/user/{id:[0-9]+}', 'UserController:userPhones');
 $app->post('/user/{id:[0-9]+}/add', 'PhoneController:addUserPhone');
 $app->post('/user/{id:[0-9]+}/phone/{phone_id:[0-9]+}', 'PhoneController:phoneUpdate');
 $app->delete('/phone/{id:[0-9]+}', 'PhoneController:deletePhone');
+
+$app->get('/weather', 'WeatherController:getWeather');

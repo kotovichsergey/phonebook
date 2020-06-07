@@ -4,10 +4,6 @@ session_start();
 
 require_once 'vendor/autoload.php';
 
-// $user = new \App\Models\User;
-// var_dump($user);
-// die();
-
 $config = ['settings' => [
         'displayErrorDetails' => true,
         'db' => [
@@ -44,4 +40,7 @@ $container['UserController'] = function ($container) {
 };
 $container['PhoneController'] = function ($container) {
     return new \App\Controllers\PhoneController($container);
+};
+$container['WeatherController'] = function ($container) {
+    return new \App\Controllers\WeatherController($container);
 };
